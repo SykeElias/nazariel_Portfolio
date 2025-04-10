@@ -593,6 +593,32 @@ span {
 
 @media screen and (max-width: 430px) {
 
+    .footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        padding: 1rem;
+    }
+
+    .footer-iconTop {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0.5rem;
+        background: var(--main-color);
+        border-radius: 0.8rem;
+        transition: 0.5s ease;
+    }
+
+    .footer-iconTop a {
+        color: white;
+        font-size: 1rem;
+    }
+
+    .footer-iconTop:hover {
+        transform: translateY(-3px);
+    }
 
     .about-img {
         display: flex;
