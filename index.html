@@ -209,9 +209,15 @@
             <input type="hidden" name="_captcha" value="false" />
             <input type="hidden" name="_template" value="table" />
             <input type="text" name="_honey" style="display: none;" />
+            <input type="hidden" name="_next" value="https://nazariel.ch" />
 
             <button type="submit" class="btn">Send</button>
         </form>
+
+        <div id="confirmationModal" class="modal">
+            <p>✅ Message sent successfully!</p>
+            <button id="closeModal">Close</button>
+        </div>
 
         <div class="contact-image">
             <img src="img/contact_profile.png" alt="Contact Illustration" />
