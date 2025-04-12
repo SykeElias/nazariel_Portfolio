@@ -189,7 +189,7 @@ span {
 
 /* Portfolio section */
 .portfolio{
-    background-color: var(--bg-color);
+    background-color: var(--snd-bf-color);
 }
 
 .portfolio h2 {
@@ -290,7 +290,7 @@ span {
 
 .education {
     padding: 100px 15px;
-    background: var(--snd-bf-color);
+    background: var(--bg-color);
 }
 
 .education h2{
