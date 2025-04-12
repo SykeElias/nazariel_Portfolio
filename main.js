@@ -10,5 +10,3 @@ menuIcon.onclick = () => {
 window.onscroll = () => {
     navbar.classList.remove('active');
 };
-
-
