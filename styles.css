@@ -164,7 +164,7 @@ span {
 .about-img img {
     width: 35vw;
     height: 35vw;
-    margin-left: -500px; /* Verschiebt das Bild 5 Pixel nach links */
+    margin-left: -200px; /* Verschiebt das Bild 5 Pixel nach links */
 }
 
 
@@ -525,6 +525,18 @@ span {
 }
 
 
+
+.menu {
+    list-style-type: none; /* Entfernt die Aufzählungszeichen */
+    padding: 0; /* Entfernt den Standard-Padding */
+    margin: 0; /* Entfernt den Standard-Margin */
+    font-size: 3.6rem;
+}
+
+.menu-elem a {
+    padding-left: 50px; /* Fügt Padding links hinzu, um die Icons nach rechts zu verschieben */
+}
+
 /* Media responsive*/
 @media (max-width: 991px) {
     .header {
@@ -594,6 +606,15 @@ span {
 
 @media screen and (max-width: 430px) {
 
+    .menu {
+        list-style-type: none; /* Entfernt die Aufzählungszeichen */
+        padding: 0; /* Entfernt den Standard-Padding */
+        margin: 0; /* Entfernt den Standard-Margin */
+        font-size: 1.6rem;
+    }
+    .menu-elem a {
+        margin: 0 3px; /* Oder einen anderen Wert für den gewünschten Abstand */
+    }
     .footer {
         display: flex;
         justify-content: space-between;
