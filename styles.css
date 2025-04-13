@@ -150,42 +150,84 @@ span {
     box-shadow: none;
 }
 
-
-/* About section */
+/* About Section - Optimiert für Dark Theme */
 .about {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 2rem;
+    gap: 5rem;
     background: var(--snd-bf-color);
-    width: 100%;
+    padding: 10rem 9% 2rem;
 }
 
 .about-img img {
     width: 35vw;
-    height: 35vw;
-    margin-left: -200px;
+    max-width: 400px;
+    min-width: 300px;
+    border-radius: 20px;
+    box-shadow: 0 0 25px rgba(89, 178, 244, 0.3);
+    transition: transform 0.5s ease;
 }
 
+.about-img img:hover {
+    transform: scale(1.02);
+}
 
-.heading {
-    text-align: center;
-    font-size: 4.5rem;
+.about-content {
+    flex: 1;
 }
 
 .about-content h2 {
     text-align: left;
     line-height: 1.2;
+    margin-bottom: 1.5rem;
+    font-size: 4.5rem;
 }
 
 .about-content h3 {
     font-size: 2.6rem;
+    color: var(--main-color);
+    margin-bottom: 2rem;
 }
 
 .about-content p {
-    font-size: 1.6rem;
-    margin: 2rem 0 3rem;
+    font-size: 1.8rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
 }
+
+.about-list {
+    list-style: none;
+    margin: 2rem 0;
+}
+
+.about-list li {
+    font-size: 1.6rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    padding-left: 3rem;
+    line-height: 1.5;
+}
+
+.about-list li::before {
+    content: '▹';
+    position: absolute;
+    left: 0;
+    color: var(--main-color);
+    font-size: 2rem;
+    line-height: 1;
+}
+
+.list-category {
+    color: var(--main-color);
+    font-weight: 700;
+}
+
+.highlight {
+    color: var(--main-color);
+    font-weight: 600;
+}
+
 
 /* Portfolio section */
 .portfolio{
@@ -195,6 +237,14 @@ span {
 .portfolio h2 {
     margin-bottom: 4rem;
 }
+
+.portfolio .heading {
+    font-size: 4rem;
+    text-align: center;
+    margin: 2rem 0;
+    position: relative;
+}
+
 
 .portfolio-container {
     display: grid;
@@ -556,19 +606,150 @@ span {
         margin-top: 3rem;
     }
 
-    .about {
-        flex-direction: column;
-        padding: 5rem 5%;
+    /* ==================== MEDIA QUERIES ==================== */
+    /* Tablet (1024px und kleiner) */
+    @media screen and (max-width: 1024px) {
+        .header {
+            padding: 2rem 5%;
+        }
+
+        .home {
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .home-img img {
+            width: 50vw;
+            margin: 3rem auto 0;
+        }
+
+        .portfolio-container {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .about {
+            flex-direction: column;
+            padding: 5rem 5%;
+            text-align: center;
+        }
+
+        .about-img img {
+            width: 60vw;
+            max-width: none;
+            margin: 0 auto 3rem;
+        }
+
+        .about-content h2,
+        .about-content h3,
+        .about-content p {
+            text-align: center;
+        }
+
+        .about-list {
+            display: inline-block;
+            text-align: left;
+        }
     }
 
-    .about-img img {
-        width: 60vw;
+    /* Kleine Tablets (768px und kleiner) */
+    @media screen and (max-width: 768px) {
+        .home-img img {
+            width: 65vw;
+            height: auto;
+        }
+
+        .about-img img {
+            width: 70vw;
+            height: auto;
+        }
+
+        .contact-image img {
+            max-width: 80%;
+        }
+
+        /* Timeline-Anpassungen für mobile Ansicht */
+        .timeline-items::before {
+            left: 8px;
+        }
+
+        .timeline-item {
+            padding-left: 40px !important;
+            padding-right: 0 !important;
+        }
+
+        .timeline-dot {
+            left: 0 !important;
+        }
     }
 
-    .about-content h2,
-    .about-content h3,
-    .about-content p {
-        text-align: center;
+    /* Mobile (430px und kleiner) */
+    @media screen and (max-width: 430px) {
+        html {
+            font-size: 55%;
+        }
+
+        /* Header/Navigation */
+        #menu-icon {
+            display: block;
+        }
+
+        .navbar {
+            position: absolute;
+            top: 100%;
+            left: -100%;
+            width: 100%;
+            background: var(--snd-bf-color);
+            padding: 2rem 0;
+            transition: left 0.3s ease;
+        }
+
+        .navbar.active {
+            left: 0;
+        }
+
+        .navbar a {
+            display: block;
+            margin: 1.5rem 0;
+            font-size: 2rem;
+            text-align: center;
+        }
+
+        /* Home Section */
+        .home-img img {
+            width: 80vw;
+        }
+
+        /* About Section */
+        .about-img img {
+            width: 80vw;
+            height: auto;
+            margin: 0 auto 3rem;
+        }
+
+        .about-list li {
+            padding-left: 2.5rem;
+            font-size: 1.8rem;
+        }
+
+        /* Portfolio */
+        .portfolio-container {
+            grid-template-columns: 1fr;
+        }
+
+        .portfolio-box {
+            height: auto;
+        }
+
+        /* Footer */
+        .footer {
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .footer-iconTop {
+            margin-top: 1.5rem;
+            align-self: center;
+        }
     }
 }
 
@@ -581,15 +762,21 @@ span {
     }
 
     .about-img img {
-        width: 30vw;
-        height: 35vw;
-        margin-left: -0px;
+        width: 70vw;
+        box-shadow: 0 0 20px rgba(89, 178, 244, 0.2);
+    }
+
+    .about-content p {
+        font-size: 1.7rem;
     }
 
     .contact-image img {
         max-width: 70%;
         border-radius: 1rem;
         box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .education{
+        background: var(--bg-color);
     }
 }
 
@@ -607,17 +794,26 @@ span {
         margin-top: 1rem;
     }
 
-    .about-img {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
+    .about {
+        padding: 6rem 5%;
     }
 
     .about-img img {
-        width: 35vw;
-        height: 35vw;
-        margin-left: 3rem;
+        width: 80vw;
+        margin-bottom: 2rem;
+    }
+
+    .about-content h2 {
+        font-size: 3.5rem;
+    }
+
+    .about-list li {
+        font-size: 1.5rem;
+        padding-left: 2.5rem;
+    }
+
+    .about-list li::before {
+        font-size: 1.8rem;
     }
 
 
@@ -650,7 +846,7 @@ span {
     }
 
     .education {
-        background: var(--snd-bf-color);
+        background: var(--bg-color);
         width: 100%;
     }
 
