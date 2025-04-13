@@ -909,3 +909,21 @@ span {
         font-size: 2rem;
     }
 }
+
+@media (min-width: 1025px) {
+    .about-img img {
+        width: 45vw;
+        max-width: 600px;
+        min-width: 300px;
+        border-radius: 20px;
+        box-shadow: 0 0 25px rgba(89, 178, 244, 0.3);
+        transition: transform 0.5s ease;
+    }
+    .logo {
+        font-size: 3.5rem;
+    }
+
+    .navbar a {
+        font-size: 3rem;
+    }
+}
