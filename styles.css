@@ -123,10 +123,8 @@ span {
 }
 
 .home-img img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
+    width: 30vw;
+    height: auto;
     margin-left: 25rem;
     animation: floatImage 4s ease-in-out infinite;
 }
