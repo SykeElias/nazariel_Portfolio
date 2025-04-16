@@ -489,7 +489,7 @@ span {
     padding: 1.2rem;
     font-size: 1.6rem;
     border-radius: 0.8rem;
-    border: none;
+    border: 2px solid #f19292;
     background: var(--snd-bf-color);
     color: var(--text-color);
     margin-bottom: 1.5rem;
