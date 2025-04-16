@@ -236,8 +236,12 @@
     <div class="contact-container">
         <form action="https://formsubmit.co/48d210c33b1cec9d2be2837d1691b305" method="Post">
             <div class="input-box">
-                <input type="text" name="Name" placeholder="Full Name" required />
-                <input type="email" name="Email" placeholder="Email" required />
+                <label>
+                    <input type="text" name="Name" placeholder="Full Name" required />
+                </label>
+                <label>
+                    <input type="email" name="Email" placeholder="Email" required />
+                </label>
             </div>
             <label class="label" for="subject">Subject</label>
             <textarea id="subject" name="Subject" placeholder="The subject here" class="subject" required></textarea>
@@ -248,12 +252,14 @@
             <!-- Anti-spam -->
             <input type="hidden" name="_captcha" value="false" />
             <input type="hidden" name="_template" value="table" />
-            <input type="text" name="_honey" style="display: none;" />
+            <label>
+                <input type="text" name="_honey" style="display: none;" />
+            </label>
             <input type="hidden" name="_next" value="https://nazariel.ch/thank/thank.html" />
+            <input type="hidden" name="_subject" value="Neue nachricht von nazariel.ch!">
 
             <button type="submit" class="btn">Send</button>
         </form>
-
 
         <div class="contact-image">
             <img src="img/contact_profile.png" alt="Contact Illustration" />
