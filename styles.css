@@ -228,6 +228,12 @@ span {
     font-weight: 600;
 }
 
+.home-img img {
+    border-radius: 50%; /* Macht das Bild rund */
+    width: 250px;      /* Passe die Größe nach Bedarf an */
+    height: 250px;     /* Sollte gleich wie die Breite sein */
+    object-fit: cover; /* Verhindert Verzerrung des Bildes */
+}
 
 /* Portfolio section */
 .portfolio{
@@ -600,12 +606,11 @@ span {
     color: white;
 }
 
-/* Media responsive */
+/* ==================== MEDIA QUERIES (RESPONSIVE) ==================== */
+
+/* Großes Tablet (1024px und kleiner) */
 @media screen and (max-width: 1024px) {
-    .portfolio-container {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
+    /* Allgemeine Layout-Anpassungen */
     .header {
         padding: 2rem 5%;
     }
@@ -615,30 +620,12 @@ span {
         text-align: center;
     }
 
-    .home-img img {
-        width: 50vw;
-        margin-top: 3rem;
-    }
-
-    /* Tablet (1024px und kleiner) */
-    .header {
-        padding: 2rem 5%;
-    }
-
-    .home {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .home-img img {
-        width: 50vw;
-        margin: 3rem auto 0;
-    }
-
+    /* Portfolio Grid */
     .portfolio-container {
         grid-template-columns: repeat(2, 1fr);
     }
 
+    /* About Section */
     .about {
         flex-direction: column;
         padding: 5rem 5%;
@@ -661,25 +648,43 @@ span {
         display: inline-block;
         text-align: left;
     }
+
+    /* Home Image (rund + nach links verschoben) */
+    .home-img img {
+        width: 30vw;
+        height: 30vw;
+        border-radius: 50%;
+        object-fit: cover;
+        margin: 3rem 0 0 -10%; /* Negative margin-left für Verschiebung nach links */
+        max-width: 400px;
+        max-height: 400px;
+    }
 }
 
-/* Kleine Tablets (768px und kleiner) */
+/* Kleines Tablet (768px und kleiner) */
 @media screen and (max-width: 768px) {
+    /* Home Image */
     .home-img img {
-        width: 65vw;
-        height: auto;
+        width: 40vw;
+        height: 40vw;
+        margin-left: -15%; /* Stärkere Verschiebung nach links auf kleineren Screens */
+        animation: floatImage 4s ease-in-out infinite;
     }
 
+    /* About Image */
     .about-img img {
         width: 70vw;
-        height: auto;
+        box-shadow: 0 0 20px rgba(89, 178, 244, 0.2);
     }
 
+    /* Kontakt-Bild */
     .contact-image img {
-        max-width: 80%;
+        max-width: 70%;
+        border-radius: 1rem;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     }
 
-    /* Timeline-Anpassungen für mobile Ansicht */
+    /* Timeline-Anpassungen */
     .timeline-items::before {
         left: 8px;
     }
@@ -696,11 +701,12 @@ span {
 
 /* Mobile (430px und kleiner) */
 @media screen and (max-width: 430px) {
+    /* Schriftgröße */
     html {
         font-size: 55%;
     }
 
-    /* Header/Navigation */
+    /* Navigation */
     #menu-icon {
         display: block;
     }
@@ -726,30 +732,24 @@ span {
         text-align: center;
     }
 
-    /* Home Section */
+    /* Home Image (stark nach links verschoben) */
     .home-img img {
-        width: 80vw;
+        width: 60vw;
+        height: 60vw;
+        margin-left: -10%;
+        max-width: 250px;
+        max-height: 250px;
     }
 
     /* About Section */
     .about-img img {
         width: 80vw;
-        height: auto;
-        margin: 0 auto 3rem;
-    }
-
-    .about-list li {
-        padding-left: 2.5rem;
-        font-size: 1.8rem;
+        margin-bottom: 2rem;
     }
 
     /* Portfolio */
     .portfolio-container {
         grid-template-columns: 1fr;
-    }
-
-    .portfolio-box {
-        height: auto;
     }
 
     /* Footer */
@@ -764,160 +764,7 @@ span {
     }
 }
 
-@media screen and (max-width: 768px) {
-    .home-img img {
-        width: 30vw;
-        height: 20vw;
-        margin-left: -0px;
-        animation: floatImage 4s ease-in-out infinite;
-    }
-
-    .about-img img {
-        width: 70vw;
-        box-shadow: 0 0 20px rgba(89, 178, 244, 0.2);
-    }
-
-    .about-content p {
-        font-size: 1.7rem;
-    }
-
-    .contact-image img {
-        max-width: 70%;
-        border-radius: 1rem;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    }
-
-    .education {
-        background: var(--bg-color);
-    }
-}
-
-@media screen and (max-width: 430px) {
-    .footer {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .footer-iconTop {
-        align-self: flex-end;
-        margin-top: 1rem;
-    }
-
-    .about {
-        padding: 6rem 5%;
-    }
-
-    .about-img img {
-        width: 80vw;
-        margin-bottom: 2rem;
-    }
-
-    .about-content h2 {
-        font-size: 3.5rem;
-    }
-
-    .about-list li {
-        font-size: 1.5rem;
-        padding-left: 2.5rem;
-    }
-
-    .about-list li::before {
-        font-size: 1.8rem;
-    }
-
-    .home-img img {
-        margin-left: 5%;
-        width: 35vw;
-        animation: floatImage 4s ease-in-out infinite;
-    }
-
-    .timeline-items::before {
-        left: 8px;
-    }
-
-    .timeline-item {
-        padding-left: 40px !important;
-        padding-right: 0 !important;
-        text-align: left !important;
-    }
-
-    .timeline-dot {
-        left: 0 !important;
-    }
-
-    .timeline-content {
-        padding: 20px;
-    }
-
-    .education h2 {
-        font-size: 4rem;
-    }
-
-    .education {
-        background: var(--bg-color);
-        width: 100%;
-    }
-
-    .timeline-item:nth-child(odd),
-    .timeline-item:nth-child(even) {
-        padding-left: 40px;
-    }
-
-    .portfolio-container {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-    }
-
-    .portfolio-box {
-        height: 220px;
-    }
-
-    .portfolio-layer h4 {
-        font-size: 2rem;
-    }
-
-    .portfolio-layer p {
-        font-size: 1.2rem;
-        padding: 0 1rem;
-    }
-
-    .portfolio-layer i {
-        font-size: 2rem;
-    }
-
-    .portfolio-box .portfolio-layer {
-        padding: 0 2rem;
-    }
-
-    #menu-icon {
-        display: block;
-        cursor: pointer;
-    }
-
-    .navbar {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background: var(--snd-bf-color);
-        display: none;
-        flex-direction: column;
-        align-items: center;
-        padding: 1rem 0;
-        box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
-        z-index: 99;
-    }
-
-    .navbar.active {
-        display: flex;
-    }
-
-    .navbar a {
-        margin: 1.5rem 0;
-        font-size: 2rem;
-    }
-}
-
+/* Desktop (1025px und größer) */
 @media (min-width: 1025px) {
     .about-img img {
         width: 45vw;
