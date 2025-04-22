@@ -338,11 +338,12 @@ span {
 /* Education section */
 
 
-.heading-education{
-    font-size: 8rem;
+.heading-education {
+    font-size: 4.5rem;
     text-align: center;
     margin: 5rem 0;
 }
+
 
 .education {
     padding: 100px 15px;
@@ -350,7 +351,7 @@ span {
 }
 
 .education h2{
-    margin-bottom: 5rem;
+    margin-bottom: 4rem;
 }
 
 .timeline-items {
@@ -541,11 +542,11 @@ span {
 }
 
 .contact-image img {
-    max-width: 100%;
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
     border-radius: 1rem;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
-
 
 /* Footer section */
 .footer {
@@ -667,7 +668,7 @@ span {
     .home-img img {
         width: 40vw;
         height: 40vw;
-        margin-left: -10%; /* Stärkere Verschiebung nach links auf kleineren Screens */
+        margin-left: 0; /* Stärkere Verschiebung nach links auf kleineren Screens */
         animation: floatImage 4s ease-in-out infinite;
     }
 
@@ -684,7 +685,6 @@ span {
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     }
 
-    /* Timeline-Anpassungen */
     .timeline-items::before {
         left: 8px;
     }
@@ -692,10 +692,27 @@ span {
     .timeline-item {
         padding-left: 40px !important;
         padding-right: 0 !important;
+        text-align: left !important;
     }
 
     .timeline-dot {
         left: 0 !important;
+    }
+
+    .timeline-date {
+        text-align: left !important;
+    }
+
+    .timeline-content {
+        text-align: left !important;
+    }
+
+    .contact-image img {
+        width: 300px;
+        height: 300px;
+        object-fit: cover;
+        border-radius: 1rem;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
 }
 
@@ -747,6 +764,7 @@ span {
         margin-bottom: 2rem;
     }
 
+
     .contact-image img {
         width: 300px;
         height: 300px;
@@ -768,8 +786,10 @@ span {
 
     .footer-iconTop {
         margin-top: 1.5rem;
+        margin-left: auto;
         align-self: center;
     }
+
 }
 
 /* Desktop (1025px und größer) */
